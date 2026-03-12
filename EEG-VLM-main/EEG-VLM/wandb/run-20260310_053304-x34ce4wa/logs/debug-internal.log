@@ -1,0 +1,11 @@
+{"time":"2026-03-10T05:33:04.961945169Z","level":"INFO","msg":"stream: starting","core version":"0.24.1"}
+{"time":"2026-03-10T05:33:05.955307834Z","level":"INFO","msg":"stream: created new stream","id":"x34ce4wa"}
+{"time":"2026-03-10T05:33:05.955521086Z","level":"INFO","msg":"handler: started","stream_id":"x34ce4wa"}
+{"time":"2026-03-10T05:33:05.956498071Z","level":"INFO","msg":"stream: started","id":"x34ce4wa"}
+{"time":"2026-03-10T05:33:05.956538576Z","level":"INFO","msg":"writer: started","stream_id":"x34ce4wa"}
+{"time":"2026-03-10T05:33:05.956539649Z","level":"INFO","msg":"sender: started","stream_id":"x34ce4wa"}
+{"time":"2026-03-10T06:58:07.278642251Z","level":"INFO","msg":"stream: closing","id":"x34ce4wa"}
+{"time":"2026-03-10T06:58:09.42640066Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-10T06:58:09.782863959Z","level":"INFO","msg":"handler: closed","stream_id":"x34ce4wa"}
+{"time":"2026-03-10T06:58:09.78802208Z","level":"INFO","msg":"sender: closed","stream_id":"x34ce4wa"}
+{"time":"2026-03-10T06:58:09.788075764Z","level":"INFO","msg":"stream: closed","id":"x34ce4wa"}

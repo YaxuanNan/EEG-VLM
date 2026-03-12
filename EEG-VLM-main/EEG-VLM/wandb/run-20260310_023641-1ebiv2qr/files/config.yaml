@@ -1,0 +1,587 @@
+_name_or_path:
+    value: /liuran/liuran/EEG/language_model/model/llava-v1.5-13b
+_wandb:
+    value:
+        cli_version: 0.24.1
+        e:
+            f5tfslvz9yznx9guqee2ydxrpvgbdec7:
+                args:
+                    - --local_rank=0
+                    - --lora_enable
+                    - "True"
+                    - --lora_r
+                    - "128"
+                    - --lora_alpha
+                    - "256"
+                    - --mm_projector_lr
+                    - "2e-5"
+                    - --deepspeed
+                    - ./llava/scripts/zero3.json
+                    - --model_name_or_path
+                    - /liuran/liuran/EEG/language_model/model/llava-v1.5-13b
+                    - --version
+                    - v1
+                    - --data_path
+                    - /liuran/liuran/EEG/EEG-VLM-main/EEG-VLM/sleep_data/eeg_ft.json
+                    - --image_folder
+                    - /liuran/liuran/EEG/EEG_SLEEP_datasets/process_sleep_data/sleep_event/train
+                    - --vision_tower
+                    - /liuran/liuran/EEG/vision_model/model/clip-vit-large-patch14-336
+                    - --mm_projector_type
+                    - mlp2x_gelu
+                    - --mm_vision_select_layer
+                    - "-2"
+                    - --mm_use_im_start_end
+                    - "False"
+                    - --mm_use_im_patch_token
+                    - "False"
+                    - --image_aspect_ratio
+                    - pad
+                    - --group_by_modality_length
+                    - "True"
+                    - --bf16
+                    - "True"
+                    - --output_dir
+                    - /liuran/liuran/EEG/EEG-VLM-main/checkpoints/run_eeg_vlm_640e2a1
+                    - --num_train_epochs
+                    - "2"
+                    - --per_device_train_batch_size
+                    - "16"
+                    - --per_device_eval_batch_size
+                    - "4"
+                    - --gradient_accumulation_steps
+                    - "1"
+                    - --evaluation_strategy
+                    - "no"
+                    - --save_strategy
+                    - steps
+                    - --save_steps
+                    - "640"
+                    - --save_total_limit
+                    - "1"
+                    - --learning_rate
+                    - "3e-4"
+                    - --weight_decay
+                    - "0."
+                    - --warmup_ratio
+                    - "0.03"
+                    - --lr_scheduler_type
+                    - cosine
+                    - --logging_steps
+                    - "1"
+                    - --tf32
+                    - "True"
+                    - --model_max_length
+                    - "4096"
+                    - --gradient_checkpointing
+                    - "True"
+                    - --dataloader_num_workers
+                    - "1"
+                    - --lazy_preprocess
+                    - "True"
+                    - --report_to
+                    - wandb
+                codePath: llava/train/train_mem.py
+                codePathLocal: llava/train/train_mem.py
+                cpu_count: 96
+                cpu_count_logical: 192
+                cudaVersion: "12.8"
+                disk:
+                    /:
+                        total: "5757305094144"
+                        used: "5276882804736"
+                email: 1061034519@qq.com
+                executable: /opt/miniconda3/envs/eeg_vlm/bin/python3.10
+                gpu: NVIDIA A100-SXM4-80GB
+                gpu_count: 4
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-0b112654-3bc2-94c1-2619-bc801efd97b9
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-95d780b3-4cdb-d81b-40bd-02d79d803729
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-53d1b493-b45e-a3d3-dcbf-82fd4733a8f6
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-4e514833-f4f4-ccd9-2055-133b5a5b5f46
+                host: gpu04
+                memory:
+                    total: "2164092190720"
+                os: Linux-5.15.0-140-generic-x86_64-with-glibc2.35
+                program: /liuran/liuran/EEG/EEG-VLM-main/EEG-VLM/llava/train/train_mem.py
+                python: CPython 3.10.19
+                root: /liuran/liuran/EEG/EEG-VLM-main/EEG-VLM
+                startedAt: "2026-03-10T02:36:41.002464Z"
+                writerId: f5tfslvz9yznx9guqee2ydxrpvgbdec7
+        m:
+            - "1": train/global_step
+              "6":
+                - 3
+              "7": []
+            - "2": '*'
+              "5": 1
+              "6":
+                - 1
+              "7": []
+        python_version: 3.10.19
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 49
+                - 53
+                - 71
+                - 98
+                - 105
+            "2":
+                - 1
+                - 5
+                - 11
+                - 49
+                - 53
+                - 71
+                - 98
+                - 105
+            "3":
+                - 7
+                - 66
+            "4": 3.10.19
+            "5": 0.24.1
+            "6": 4.31.0
+            "12": 0.24.1
+            "13": linux-x86_64
+adafactor:
+    value: false
+adam_beta1:
+    value: 0.9
+adam_beta2:
+    value: 0.999
+adam_epsilon:
+    value: 1e-08
+add_cross_attention:
+    value: false
+architectures:
+    value:
+        - LlavaLlamaForCausalLM
+auto_find_batch_size:
+    value: false
+bad_words_ids:
+    value: null
+begin_suppress_tokens:
+    value: null
+bf16:
+    value: true
+bf16_full_eval:
+    value: false
+bits:
+    value: 16
+bos_token_id:
+    value: 1
+cache_dir:
+    value: None
+chunk_size_feed_forward:
+    value: 0
+cross_attention_hidden_size:
+    value: null
+data_seed:
+    value: None
+dataloader_drop_last:
+    value: false
+dataloader_num_workers:
+    value: 1
+dataloader_pin_memory:
+    value: true
+ddp_backend:
+    value: None
+ddp_broadcast_buffers:
+    value: None
+ddp_bucket_cap_mb:
+    value: None
+ddp_find_unused_parameters:
+    value: None
+ddp_timeout:
+    value: 1800
+debug:
+    value: '[]'
+decoder_start_token_id:
+    value: null
+deepspeed:
+    value: ./llava/scripts/zero3.json
+disable_tqdm:
+    value: false
+diversity_penalty:
+    value: 0
+do_eval:
+    value: false
+do_predict:
+    value: false
+do_sample:
+    value: false
+do_train:
+    value: false
+double_quant:
+    value: true
+early_stopping:
+    value: false
+encoder_no_repeat_ngram_size:
+    value: 0
+eos_token_id:
+    value: 2
+eval_accumulation_steps:
+    value: None
+eval_batch_size:
+    value: 4
+eval_delay:
+    value: 0
+eval_steps:
+    value: None
+evaluation_strategy:
+    value: "no"
+exponential_decay_length_penalty:
+    value: null
+finetuning_task:
+    value: null
+forced_bos_token_id:
+    value: null
+forced_eos_token_id:
+    value: null
+fp16:
+    value: false
+fp16_backend:
+    value: auto
+fp16_full_eval:
+    value: false
+fp16_opt_level:
+    value: O1
+freeze_mm_mlp_adapter:
+    value: false
+freeze_mm_vision_resampler:
+    value: false
+fsdp:
+    value: '[]'
+fsdp_config:
+    value: '{''fsdp_min_num_params'': 0, ''xla'': False, ''xla_fsdp_grad_ckpt'': False}'
+fsdp_min_num_params:
+    value: 0
+fsdp_transformer_layer_cls_to_wrap:
+    value: None
+full_determinism:
+    value: false
+gradient_accumulation_steps:
+    value: 1
+gradient_checkpointing:
+    value: true
+greater_is_better:
+    value: None
+group_by_length:
+    value: false
+group_by_modality_length:
+    value: true
+half_precision_backend:
+    value: auto
+hidden_act:
+    value: silu
+hidden_size:
+    value: 5120
+hub_model_id:
+    value: None
+hub_private_repo:
+    value: false
+hub_strategy:
+    value: every_save
+hub_token:
+    value: <HUB_TOKEN>
+id2label:
+    value:
+        "0": LABEL_0
+        "1": LABEL_1
+ignore_data_skip:
+    value: false
+image_aspect_ratio:
+    value: pad
+include_inputs_for_metrics:
+    value: false
+initializer_range:
+    value: 0.02
+intermediate_size:
+    value: 13824
+is_decoder:
+    value: false
+is_encoder_decoder:
+    value: false
+jit_mode_eval:
+    value: false
+label_names:
+    value: None
+label_smoothing_factor:
+    value: 0
+label2id:
+    value:
+        LABEL_0: 0
+        LABEL_1: 1
+learning_rate:
+    value: 0.0003
+length_column_name:
+    value: length
+length_penalty:
+    value: 1
+load_best_model_at_end:
+    value: false
+local_rank:
+    value: 0
+log_level:
+    value: passive
+log_level_replica:
+    value: warning
+log_on_each_node:
+    value: true
+logging_dir:
+    value: /liuran/liuran/EEG/EEG-VLM-main/checkpoints/run_eeg_vlm_640e2a1/runs/Mar10_02-34-21_gpu04
+logging_first_step:
+    value: false
+logging_nan_inf_filter:
+    value: true
+logging_steps:
+    value: 1
+logging_strategy:
+    value: steps
+lora_alpha:
+    value: 256
+lora_bias:
+    value: none
+lora_dropout:
+    value: 0.05
+lora_enable:
+    value: true
+lora_r:
+    value: 128
+lora_weight_path:
+    value: ""
+lr_scheduler_type:
+    value: cosine
+max_grad_norm:
+    value: 1
+max_length:
+    value: 4096
+max_position_embeddings:
+    value: 4096
+max_steps:
+    value: -1
+metric_for_best_model:
+    value: None
+min_length:
+    value: 0
+mm_hidden_size:
+    value: 1024
+mm_projector_lr:
+    value: 2e-05
+mm_projector_type:
+    value: mlp2x_gelu
+mm_resampler_type:
+    value: null
+mm_use_im_patch_token:
+    value: false
+mm_use_im_start_end:
+    value: false
+mm_vision_select_feature:
+    value: patch
+mm_vision_select_layer:
+    value: -2
+mm_vision_tower:
+    value: /liuran/liuran/EEG/vision_model/model/clip-vit-large-patch14-336
+model_max_length:
+    value: 4096
+model_type:
+    value: llava
+mp_parameters:
+    value: ""
+mpt_attn_impl:
+    value: triton
+no_cuda:
+    value: false
+no_repeat_ngram_size:
+    value: 0
+num_attention_heads:
+    value: 40
+num_beam_groups:
+    value: 1
+num_beams:
+    value: 1
+num_hidden_layers:
+    value: 40
+num_key_value_heads:
+    value: 40
+num_return_sequences:
+    value: 1
+num_train_epochs:
+    value: 2
+optim:
+    value: adamw_torch
+optim_args:
+    value: None
+output_attentions:
+    value: false
+output_dir:
+    value: /liuran/liuran/EEG/EEG-VLM-main/checkpoints/run_eeg_vlm_640e2a1
+output_hidden_states:
+    value: false
+output_scores:
+    value: false
+overwrite_output_dir:
+    value: false
+pad_token_id:
+    value: 0
+past_index:
+    value: -1
+per_device_eval_batch_size:
+    value: 4
+per_device_train_batch_size:
+    value: 16
+per_gpu_eval_batch_size:
+    value: None
+per_gpu_train_batch_size:
+    value: None
+prediction_loss_only:
+    value: false
+prefix:
+    value: null
+pretraining_tp:
+    value: 1
+problem_type:
+    value: null
+push_to_hub:
+    value: false
+push_to_hub_model_id:
+    value: None
+push_to_hub_organization:
+    value: None
+push_to_hub_token:
+    value: <PUSH_TO_HUB_TOKEN>
+quant_type:
+    value: nf4
+ray_scope:
+    value: last
+remove_invalid_values:
+    value: false
+remove_unused_columns:
+    value: false
+repetition_penalty:
+    value: 1
+report_to:
+    value: '[''wandb'']'
+resume_from_checkpoint:
+    value: None
+return_dict:
+    value: true
+return_dict_in_generate:
+    value: false
+rms_norm_eps:
+    value: 1e-05
+rope_scaling:
+    value: null
+run_name:
+    value: /liuran/liuran/EEG/EEG-VLM-main/checkpoints/run_eeg_vlm_640e2a1
+save_on_each_node:
+    value: false
+save_safetensors:
+    value: false
+save_steps:
+    value: 640
+save_strategy:
+    value: steps
+save_total_limit:
+    value: 1
+seed:
+    value: 42
+sep_token_id:
+    value: null
+sharded_ddp:
+    value: '[]'
+skip_memory_metrics:
+    value: true
+suppress_tokens:
+    value: null
+task_specific_params:
+    value: null
+temperature:
+    value: 1
+tf_legacy_loss:
+    value: false
+tf32:
+    value: true
+tie_encoder_decoder:
+    value: false
+tie_word_embeddings:
+    value: false
+tokenizer_class:
+    value: null
+tokenizer_model_max_length:
+    value: 4096
+tokenizer_padding_side:
+    value: right
+top_k:
+    value: 50
+top_p:
+    value: 1
+torch_compile:
+    value: false
+torch_compile_backend:
+    value: None
+torch_compile_mode:
+    value: None
+torch_dtype:
+    value: float16
+torchdynamo:
+    value: None
+torchscript:
+    value: false
+tpu_metrics_debug:
+    value: false
+tpu_num_cores:
+    value: None
+train_batch_size:
+    value: 16
+transformers_version:
+    value: 4.31.0
+tune_mm_mlp_adapter:
+    value: false
+tune_mm_vision_resampler:
+    value: false
+typical_p:
+    value: 1
+unfreeze_mm_vision_tower:
+    value: false
+use_bfloat16:
+    value: false
+use_cache:
+    value: false
+use_ipex:
+    value: false
+use_legacy_prediction_loop:
+    value: false
+use_mm_proj:
+    value: true
+use_mps_device:
+    value: false
+vocab_size:
+    value: 32000
+warmup_ratio:
+    value: 0.03
+warmup_steps:
+    value: 0
+weight_decay:
+    value: 0
+xpu_backend:
+    value: None
