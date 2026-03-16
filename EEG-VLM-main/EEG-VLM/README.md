@@ -71,14 +71,14 @@ deepspeed --include localhost:3 llava/train/train_mem.py \
   --image_aspect_ratio pad \
   --group_by_modality_length True \
   --bf16 True \
-  --output_dir /liuran/liuran/EEG/EEG-VLM-main/checkpoints/run_eeg_vlm_640e2a1 \
+  --output_dir /liuran/liuran/EEG/EEG-VLM-main/checkpoints/run_eeg_vlm_G1_640e2a1b32_1 \
   --num_train_epochs 2 \
-  --per_device_train_batch_size 16 \
+  --per_device_train_batch_size 32 \
   --per_device_eval_batch_size 4 \
   --gradient_accumulation_steps 1 \
   --evaluation_strategy "no" \
   --save_strategy "steps" \
-  --save_steps 640 \
+  --save_steps 320 \
   --save_total_limit 1 \
   --learning_rate 3e-4 \
   --weight_decay 0. \

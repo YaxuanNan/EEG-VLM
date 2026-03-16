@@ -1,5 +1,16 @@
-{"question_id": 1, "prompt": "Can you identify the sleep stage shown in this image?", "text": "The image illustrates the Wake (W) stage. It features prominent Alpha rhythm (8-13 Hz) activity, particularly in the posterior regions, mixed with low-voltage, high-frequency Beta activity (>13 Hz). Eye blink artifacts or muscle movements may also be visible.", "label": "detail", "answer_id": "BqCaxRiPNoN7Y9uWiYDAJj", "model_id": "run_eeg_vlm_640e2a1", "metadata": {}}
-{"question_id": 2, "prompt": "Based on the rhythmic activity in this image, which sleep stage is the subject in?", "text": "The image illustrates the N3 stage, also known as Slow Wave Sleep (SWS). It is strictly defined by the dominance of high-amplitude (>75 \u00b5V), slow-frequency Delta waves (0.5-2 Hz) which cover more than 20% of the epoch. The signal appears synchronized and high-voltage.", "label": "detail", "answer_id": "HoPLBvUgZkNnSzauafpmJ9", "model_id": "run_eeg_vlm_640e2a1", "metadata": {}}
+{"question_id": 1, "prompt": "Can you identify the sleep stage shown in this image?", 
+"text": "The image illustrates the Wake (W) stage. It features prominent Alpha rhythm (8-13 Hz) activity, 
+        particularly in the posterior regions, mixed with low-voltage, 
+        high-frequency Beta activity (>13 Hz). Eye blink artifacts or muscle movements may also be visible.", 
+"label": "detail", "answer_id": "BqCaxRiPNoN7Y9uWiYDAJj", "model_id": "run_eeg_vlm_640e2a1", "metadata": {}}
+
+{"question_id": 2, "prompt": "Based on the rhythmic activity in this image, which sleep stage is the subject in?", 
+"text": "The image illustrates the N3 stage, also known as Slow Wave Sleep (SWS).
+        It is strictly defined by the dominance of high-amplitude (>75 \u00b5V), 
+        slow-frequency Delta waves (0.5-2 Hz) which cover more than 20% of the epoch.
+        The signal appears synchronized and high-voltage.", 
+  "label": "detail", "answer_id": "HoPLBvUgZkNnSzauafpmJ9", "model_id": "run_eeg_vlm_640e2a1", "metadata": {}}
+
 {"question_id": 3, "prompt": "What is the current sleep stage according to this EEG recording?", "text": "The current sleep stage according to this EEG recording is the Wake (W) stage. The image is characteristic of the waking state, also known as wakefulness or desynchronized EEG. It features prominent Alpha rhythm (8-13 Hz) activity, particularly in the posterior regions, mixed with low-voltage, high-frequency Beta activity (>13 Hz). Eye blink artifacts or muscle movements may also be visible.", "label": "detail", "answer_id": "jnKZ7zwHpjA7JWGZKysgEi", "model_id": "run_eeg_vlm_640e2a1", "metadata": {}}
 {"question_id": 4, "prompt": "Based on the rhythmic activity in this image, which sleep stage is the subject in?", "text": "The image illustrates the Wake (W) stage. The features low-voltage, mixed-frequency Theta waves (4-7 Hz). The prominent Alpha rhythm seen in wakefulness is diminished or absent. Vertex sharp waves may be present, indicating the transition from wakefulness to sleep.", "label": "detail", "answer_id": "DYKZgAXFEvvXPDpJ33V9AR", "model_id": "run_eeg_vlm_640e2a1", "metadata": {}}
 {"question_id": 5, "prompt": "Which sleep stage does this EEG segment represent?", "text": "The image illustrates the N3 stage, also known as Slow Wave Sleep (SWS). It is strictly defined by the dominance of high-amplitude (>75 \u00b5V), slow-frequency Delta waves (0.5-2 Hz) which cover more than 20% of the epoch. The signal appears synchronized and high-voltage.", "label": "detail", "answer_id": "ZMkGakbQ9eWyihBi8VBNdZ", "model_id": "run_eeg_vlm_640e2a1", "metadata": {}}

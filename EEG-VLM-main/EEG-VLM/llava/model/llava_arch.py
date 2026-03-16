@@ -171,6 +171,8 @@ class LlavaMetaForCausalLM(ABC):
         # Adjust this according to your per_device_train_batch_size
         # 根据当前的批次大小（Batch Size）来决定加载哪一份预先提取的 EEG 特征文件，并从中切片取出当前 Batch 所需的数据
         #训练模式
+        """
+        原始代码：
         if per_device_train_batch_size == 16:
             # Get the path of the directory where the current file is located
             current_file_path = os.path.abspath(__file__)
@@ -206,7 +208,47 @@ class LlavaMetaForCausalLM(ABC):
         if self.current_batch_idx * per_device_train_batch_size >= resnet_features.shape[0]:
             self.current_batch_idx = 0  # Reset for next epoch if needed
 
-        print("self.current_batch_idx:", self.current_batch_idx)
+        print("self.current_batch_idx:", self.current_batch_idx)        
+        """
+        # ==================== 开始替换的部分 ====================
+        # 获取当前文件所在目录
+        current_file_path = os.path.abspath(__file__)
+        current_dir = os.path.dirname(current_file_path)
+
+        # 1. 核心修改：通过 PyTorch 的 .training 属性动态判断模式，彻底解除数值绑定
+        if self.get_model().training:
+            # 训练模式加载训练特征
+            resnet_features_path = os.path.join(current_dir, '..', '..', 'sleep_data', 'train_high_level_shuffled_features.npy')
+        else:
+            # 评估模式加载评估特征
+            resnet_features_path = os.path.join(current_dir, '..', '..', 'sleep_data', 'eval_high_level_features.npy')
+
+        resnet_features = self.encode_resnet_features(resnet_features_path)  # (N, 1, 1024)->(N, 1, 5120)
+
+        # 2. 核心修改：修复特征索引逻辑。不再使用脆弱的 batch_idx，改为绝对样本数量追踪
+        if not hasattr(self, 'current_sample_idx'):
+            self.current_sample_idx = 0
+
+        batch_start_idx = self.current_sample_idx
+        batch_end_idx = batch_start_idx + per_device_train_batch_size
+
+        # 跨 Epoch 安全重置 (防止由于 drop_last=False 导致的末尾越界)
+        if batch_end_idx > resnet_features.shape[0]:
+            self.current_sample_idx = 0
+            batch_start_idx = 0
+            batch_end_idx = per_device_train_batch_size
+
+        # 切片提取当前批次的特征
+        resnet_features_batch = resnet_features[batch_start_idx:batch_end_idx].to(self.device)
+
+        # 更新索引追踪器，累加实际处理的图片数量
+        self.current_sample_idx += per_device_train_batch_size
+        if self.current_sample_idx >= resnet_features.shape[0]:
+            self.current_sample_idx = 0  # 跑完一轮后重置
+
+        # （可选）打印追踪进度，确认对齐无误
+        # print(f"Current sample index tracking: {self.current_sample_idx} / {resnet_features.shape[0]}")
+        # ==================== 替换结束 ====================
 
         # TODO: image start / end is not implemented here to support pretraining.
         if getattr(self.config, 'tune_mm_mlp_adapter', False) and getattr(self.config, 'mm_use_im_start_end', False):
