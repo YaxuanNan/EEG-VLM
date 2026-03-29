@@ -1,0 +1,13 @@
+{
+  "os":  "Linux-5.15.0-140-generic-x86_64-with-glibc2.35",
+  "python":  "CPython 3.10.19",
+  "startedAt":  "2026-03-17T03:01:39.057880Z",
+  "program":  "/liuran/liuran/EEG/EEG_SLEEP_datasets/wandb_process/src/upload_data.py",
+  "codePath":  "upload_data.py",
+  "codePathLocal":  "upload_data.py",
+  "email":  "1061034519@qq.com",
+  "root":  "/liuran/liuran/EEG/EEG_SLEEP_datasets/wandb_process/src",
+  "host":  "gpu04",
+  "executable":  "/opt/miniconda3/envs/eeg_vlm/bin/python3",
+  "writerId":  "22z1eho4u24l60o00p80m70t8r6g9tda"
+}

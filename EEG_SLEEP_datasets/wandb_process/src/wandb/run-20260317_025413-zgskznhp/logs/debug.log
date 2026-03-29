@@ -1,0 +1,24 @@
+2026-03-17 02:54:13,856 INFO    MainThread:3482803 [wandb_setup.py:_flush():81] Current SDK version is 0.24.1
+2026-03-17 02:54:13,856 INFO    MainThread:3482803 [wandb_setup.py:_flush():81] Configure stats pid to 3482803
+2026-03-17 02:54:13,857 INFO    MainThread:3482803 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-03-17 02:54:13,857 INFO    MainThread:3482803 [wandb_init.py:setup_run_log_directory():717] Logging user logs to /liuran/liuran/EEG/EEG_SLEEP_datasets/wandb_process/src/wandb/run-20260317_025413-zgskznhp/logs/debug.log
+2026-03-17 02:54:13,857 INFO    MainThread:3482803 [wandb_init.py:setup_run_log_directory():718] Logging internal logs to /liuran/liuran/EEG/EEG_SLEEP_datasets/wandb_process/src/wandb/run-20260317_025413-zgskznhp/logs/debug-internal.log
+2026-03-17 02:54:13,857 INFO    MainThread:3482803 [wandb_init.py:init():844] calling init triggers
+2026-03-17 02:54:13,858 INFO    MainThread:3482803 [wandb_init.py:init():849] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2026-03-17 02:54:13,859 INFO    MainThread:3482803 [wandb_init.py:init():892] starting backend
+2026-03-17 02:54:14,161 INFO    MainThread:3482803 [wandb_init.py:init():895] sending inform_init request
+2026-03-17 02:54:14,170 INFO    MainThread:3482803 [wandb_init.py:init():903] backend started and connected
+2026-03-17 02:54:14,202 INFO    MainThread:3482803 [wandb_init.py:init():973] updated telemetry
+2026-03-17 02:54:14,204 INFO    MainThread:3482803 [wandb_init.py:init():997] communicating run to backend with 90.0 second timeout
+2026-03-17 02:54:15,929 INFO    MainThread:3482803 [wandb_init.py:init():1042] starting run threads in backend
+2026-03-17 02:54:16,106 INFO    MainThread:3482803 [wandb_run.py:_console_start():2529] atexit reg
+2026-03-17 02:54:16,106 INFO    MainThread:3482803 [wandb_run.py:_redirect():2377] redirect: wrap_raw
+2026-03-17 02:54:16,106 INFO    MainThread:3482803 [wandb_run.py:_redirect():2446] Wrapping output streams.
+2026-03-17 02:54:16,106 INFO    MainThread:3482803 [wandb_run.py:_redirect():2469] Redirects installed.
+2026-03-17 02:54:16,109 INFO    MainThread:3482803 [wandb_init.py:init():1082] run started, returning control to user process
+2026-03-17 02:54:16,341 INFO    MainThread:3482803 [wandb_run.py:_finish():2295] finishing run 1061034519-yaxuan/EEG-VLM_detail/zgskznhp
+2026-03-17 02:54:16,342 INFO    MainThread:3482803 [wandb_run.py:_atexit_cleanup():2494] got exitcode: 0
+2026-03-17 02:54:16,342 INFO    MainThread:3482803 [wandb_run.py:_restore():2476] restore
+2026-03-17 02:54:16,343 INFO    MainThread:3482803 [wandb_run.py:_restore():2482] restore done
+2026-03-17 02:54:26,968 INFO    MainThread:3482803 [wandb_run.py:_footer_sync_info():3871] logging synced files

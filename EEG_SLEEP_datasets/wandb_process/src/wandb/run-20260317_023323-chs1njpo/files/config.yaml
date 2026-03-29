@@ -1,0 +1,62 @@
+_wandb:
+    value:
+        cli_version: 0.24.1
+        e:
+            obwpy0ib253fxzvdruwiktetylybs1xd:
+                codePath: upload_data.py
+                codePathLocal: upload_data.py
+                cpu_count: 96
+                cpu_count_logical: 192
+                cudaVersion: "12.8"
+                disk:
+                    /:
+                        total: "5757305094144"
+                        used: "4117745418240"
+                email: 1061034519@qq.com
+                executable: /opt/miniconda3/envs/eeg_vlm/bin/python3
+                gpu: NVIDIA A100-SXM4-80GB
+                gpu_count: 4
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-0b112654-3bc2-94c1-2619-bc801efd97b9
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-95d780b3-4cdb-d81b-40bd-02d79d803729
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-53d1b493-b45e-a3d3-dcbf-82fd4733a8f6
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-4e514833-f4f4-ccd9-2055-133b5a5b5f46
+                host: gpu04
+                memory:
+                    total: "2164092190720"
+                os: Linux-5.15.0-140-generic-x86_64-with-glibc2.35
+                program: /liuran/liuran/EEG/EEG_SLEEP_datasets/wandb_process/src/upload_data.py
+                python: CPython 3.10.19
+                root: /liuran/liuran/EEG/EEG_SLEEP_datasets/wandb_process/src
+                startedAt: "2026-03-17T02:33:23.746202Z"
+                writerId: obwpy0ib253fxzvdruwiktetylybs1xd
+        m: []
+        python_version: 3.10.19
+        t:
+            "1":
+                - 105
+            "2":
+                - 105
+            "3":
+                - 2
+                - 13
+            "4": 3.10.19
+            "5": 0.24.1
+            "12": 0.24.1
+            "13": linux-x86_64

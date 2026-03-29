@@ -1,0 +1,57 @@
+{
+  "os":  "Linux-5.15.0-140-generic-x86_64-with-glibc2.35",
+  "python":  "CPython 3.10.19",
+  "startedAt":  "2026-03-17T02:47:56.947632Z",
+  "program":  "/liuran/liuran/EEG/EEG_SLEEP_datasets/wandb_process/src/upload_data.py",
+  "codePath":  "upload_data.py",
+  "codePathLocal":  "upload_data.py",
+  "email":  "1061034519@qq.com",
+  "root":  "/liuran/liuran/EEG/EEG_SLEEP_datasets/wandb_process/src",
+  "host":  "gpu04",
+  "executable":  "/opt/miniconda3/envs/eeg_vlm/bin/python3",
+  "cpu_count":  96,
+  "cpu_count_logical":  192,
+  "gpu":  "NVIDIA A100-SXM4-80GB",
+  "gpu_count":  4,
+  "disk":  {
+    "/":  {
+      "total":  "5757305094144",
+      "used":  "4055741575168"
+    }
+  },
+  "memory":  {
+    "total":  "2164092190720"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA A100-SXM4-80GB",
+      "memoryTotal":  "85899345920",
+      "cudaCores":  6912,
+      "architecture":  "Ampere",
+      "uuid":  "GPU-0b112654-3bc2-94c1-2619-bc801efd97b9"
+    },
+    {
+      "name":  "NVIDIA A100-SXM4-80GB",
+      "memoryTotal":  "85899345920",
+      "cudaCores":  6912,
+      "architecture":  "Ampere",
+      "uuid":  "GPU-95d780b3-4cdb-d81b-40bd-02d79d803729"
+    },
+    {
+      "name":  "NVIDIA A100-SXM4-80GB",
+      "memoryTotal":  "85899345920",
+      "cudaCores":  6912,
+      "architecture":  "Ampere",
+      "uuid":  "GPU-53d1b493-b45e-a3d3-dcbf-82fd4733a8f6"
+    },
+    {
+      "name":  "NVIDIA A100-SXM4-80GB",
+      "memoryTotal":  "85899345920",
+      "cudaCores":  6912,
+      "architecture":  "Ampere",
+      "uuid":  "GPU-4e514833-f4f4-ccd9-2055-133b5a5b5f46"
+    }
+  ],
+  "cudaVersion":  "12.8",
+  "writerId":  "lpag9ukh4n3jx1nsy6ekf5ushaws2eu3"
+}

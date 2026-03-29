@@ -11,10 +11,10 @@ import pandas as pd
 """
 
 # ================= 路径配置 =================
-IMAGE_DIR = "/liuran/liuran/EEG/EEG_SLEEP_datasets/process_sleep_data/sleep_event/test"
-ANSWERS_FILE = '/liuran/liuran/EEG/EEG_SLEEP_datasets/eval_eeg_successful/json/eeg_answers_G2_80e2a1b64_8.jsonl'#每个阶段要更改序号
-OUTPUT_DIR = '/liuran/liuran/EEG/EEG_SLEEP_datasets/eval_eeg_successful/excel'
-OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'eeg_sleep_comparison_eeg_answers_G2_80e2a1b64_8.xlsx')#每个阶段要更改序号,序号以X_0表示，表示无规则识别原则
+IMAGE_DIR = "/mnt/inaisfs/workspace/EEG-VLM/data/liuran/EEG/EEG_SLEEP_datasets/process_sleep_data/sleep_event/test"
+ANSWERS_FILE = '/mnt/inaisfs/workspace/EEG-VLM/data/liuran/EEG/EEG_SLEEP_datasets/eval_eeg_successful/json/eeg_answers_G1_320e2a1b32_cot_1.jsonl'#每个阶段要更改序号
+OUTPUT_DIR = '/mnt/inaisfs/workspace/EEG-VLM/data/liuran/EEG/EEG_SLEEP_datasets/eval_eeg_successful/excel'
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'eeg_sleep_comparison_eeg_answers_G1_320e2a1b32_cot_1.xlsx')#每个阶段要更改序号,序号以X_0表示，表示无规则识别原则
 
 # ================= 1. 逻辑配置 =================
 
@@ -35,12 +35,19 @@ def get_label_from_filename(filename):
 def extract_stage_from_text(text):
     """
     读取 JSONL 中的 text 字段并输出相应阶段
+    规则：读取第一句话（以'.'结束），如果有','则只读取','前面的部分。然后在该部分中查找阶段关键词。
     """
     if not text:
         return "Unknown"
     
-    # 转换为大写进行统一匹配，直接在整个文本中搜索
-    target_text = text.upper()
+    # 1. 提取第一句话：以句号 '.' 进行分割，并取第一部分
+    first_sentence = text.split('.')[0]
+    
+    # 2. 如果第一句话中包含逗号 ','，则只取逗号前面的部分
+    target_substring = first_sentence.split(',')[0]
+    
+    # 3. 转换为大写进行统一匹配
+    target_text = target_substring.upper()
     
     # --- 标准阶段匹配模式 ---
     patterns = {

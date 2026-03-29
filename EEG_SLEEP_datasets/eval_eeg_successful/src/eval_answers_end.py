@@ -11,10 +11,10 @@ import pandas as pd
 """
 
 # ================= 路径配置 =================
-IMAGE_DIR = "/liuran/liuran/EEG/EEG_SLEEP_datasets/process_sleep_data/sleep_event/test"
-ANSWERS_FILE = '/liuran/liuran/EEG/EEG_SLEEP_datasets/eval_eeg_successful/json/eeg_answers_G2_80e2a1b64_8.jsonl'#每个阶段要更改序号
-OUTPUT_DIR = '/liuran/liuran/EEG/EEG_SLEEP_datasets/eval_eeg_successful/excel'
-OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'eeg_sleep_comparison_eeg_answers_G2_80e2a1b64_8.xlsx')#每个阶段要更改序号,序号以X_0表示，表示无规则识别原则
+IMAGE_DIR = "/mnt/inaisfs/workspace/EEG-VLM/data/liuran/EEG/EEG_SLEEP_datasets/process_sleep_data/sleep_event/test"
+ANSWERS_FILE = '/mnt/inaisfs/workspace/EEG-VLM/data/liuran/EEG/EEG_SLEEP_datasets/eval_eeg_successful/json/eeg_answers_G1_1280e4a1b16_cot_1.jsonl'#每个阶段要更改序号
+OUTPUT_DIR = '/mnt/inaisfs/workspace/EEG-VLM/data/liuran/EEG/EEG_SLEEP_datasets/eval_eeg_successful/excel'
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'eeg_sleep_comparison_eeg_answers_G1_1280e4a1b16_cot_1.xlsx')#每个阶段要更改序号,序号以X_0表示，表示无规则识别原则
 
 # ================= 1. 逻辑配置 =================
 
@@ -35,24 +35,35 @@ def get_label_from_filename(filename):
 def extract_stage_from_text(text):
     """
     读取 JSONL 中的 text 字段并输出相应阶段
+    规则：提取最后一段非空话语（以 '.' 分割后的最后一个元素），并在其中查找阶段关键词。
     """
     if not text:
         return "Unknown"
     
-    # 转换为大写进行统一匹配，直接在整个文本中搜索
-    target_text = text.upper()
+    # 1. 以句号进行分割，并去除每个片段前后的空格和换行符
+    segments = [s.strip() for s in text.split('.') if s.strip()]
     
+    if not segments:
+        return "Unknown"
+    
+    # 2. 获取最后一个非空片段（即你要求的最后一句话）
+    last_sentence = segments[-1].upper()
+    
+    # 【调试输出】如果你想在终端看到提取到的最后一句话是什么，可以取消下面这行的注释
+    # print(f"DEBUG: 提取到的最后一句话 -> {last_sentence}")
+
     # --- 标准阶段匹配模式 ---
+    # 匹配规则：在最后一句中查找对应的标签名
     patterns = {
-        "Wake (W)": r'\bWAKE\b|\(W\)', 
-        "N1": r'\bN1\b',
-        "N2": r'\bN2\b',
-        "N3": r'\bN3\b',
-        "REM": r'\bREM\b'
+        "Wake (W)": r'WAKE', 
+        "N1": r'N1',
+        "N2": r'N2',
+        "N3": r'N3',
+        "REM": r'REM'
     }
     
     for stage, pattern in patterns.items():
-        if re.search(pattern, target_text):
+        if re.search(pattern, last_sentence):
             return stage
             
     return "Unknown"
